@@ -18,8 +18,6 @@ jobs:
           paths:
             - ./node_modules
   node-v10-latest:
-    machine:
-      - image: rollupcabal/circleci-node-v10:latest
     steps:
       - checkout
       - restore_cache:
@@ -68,6 +66,8 @@ workflows:
             tags:
               only: /.*/
       - node-v10-latest:
+          machine:
+            - image: rollupcabal/circleci-node-v10:latest
           requires:
             - analysis
           filters:
