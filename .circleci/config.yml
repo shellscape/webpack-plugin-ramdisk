@@ -18,6 +18,8 @@ jobs:
           paths:
             - ./node_modules
   node-v10-latest:
+    machine:
+      - image: rollupcabal/circleci-node-v10:latest
     steps:
       - checkout
       - restore_cache:
@@ -54,6 +56,7 @@ jobs:
       - run:
           name: Validate Commit Messages
           command: npm run ci:lint:commits
+
 workflows:
   version: 2
   validate:
@@ -66,8 +69,6 @@ workflows:
             tags:
               only: /.*/
       - node-v10-latest:
-          machine:
-            - image: rollupcabal/circleci-node-v10:latest
           requires:
             - analysis
           filters:
