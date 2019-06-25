@@ -9,5 +9,5 @@ module.exports = {
     path: '/output',
     publicPath: 'output/'
   },
-  plugins: [new WebpackPluginRamdisk()]
+  plugins: [new WebpackPluginRamdisk({ name: 'simpleconfig' })]
 };
