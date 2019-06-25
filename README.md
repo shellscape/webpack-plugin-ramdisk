@@ -99,6 +99,24 @@ Default: `wpr`
 
 Sets the name of the disk/drive/mount point for the RAMdisk. e.g. A value of `batman` would result in a disk root of `/Volumes/batman` on MacOS and `/mnt/batman` on Linux variants.
 
+## API
+
+### `WebpackPluginRamdisk.cleanup(diskPath)`
+Parameters: `diskPath` ⇒ `String` The mounted path of the RAMdisk to unmount and remove
+
+`Static`. Provides a convenience method to unmount and remove a RAMdisk created with the plugin.
+
+To remove the RAMdisk that the plugin created, first obtain the `diskPath` from the plugin:
+
+```js
+const { WebpackPluginRamdisk } = require('webpack-plugin-ramdisk');
+const plugin = new WebpackPluginRamdisk(options)
+const { diskPath } = plugin;
+
+WebpackPluginRamdisk.cleanup(diskPath);
+```
+
+_**Use Caution** as specifying the wrong `diskPath` can have unintended consequences and cause a loss of data. The commands this method utilize can remove other drives as well._
 
 ### Linux Users
 

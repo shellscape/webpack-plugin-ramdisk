@@ -35,7 +35,7 @@ jobs:
           command: npm install
       - run:
           name: Run unit tests.
-          command: npm run ci:coverage
+          command: sudo npm run ci:coverage
       - run:
           name: Submit coverage data to codecov.
           command: bash <(curl -s https://codecov.io/bash)

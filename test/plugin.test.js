@@ -6,11 +6,7 @@ const execa = require('execa');
 
 const { WebpackPluginRamdisk } = require('../lib');
 
-const detatch = (diskPath) => {
-  const command =
-    process.platform === 'darwin' ? `hdiutil detach ${diskPath}` : `sudo umount ${diskPath}`;
-  execa.commandSync(command);
-};
+const detatch = WebpackPluginRamdisk.cleanup;
 
 const getSize = (diskPath) => {
   const { stdout } = execa.commandSync(`df -H ${diskPath}`);
