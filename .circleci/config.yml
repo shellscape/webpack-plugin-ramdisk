@@ -19,7 +19,7 @@ jobs:
             - ./node_modules
   node-v10-latest:
     machine:
-      - image: rollupcabal/circleci-node-v10:latest
+      image: rollupcabal/circleci-node-v10:latest
     steps:
       - checkout
       - restore_cache:
