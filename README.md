@@ -126,7 +126,9 @@ Automatic creation of a RAMdisk requires administrative permissions. During the 
 
 ### Windows Users
 
-Unfortunately Windows does not ship with any capabilities that allow for creation of RAM disks / drives programmatically, without user interaction. This is an OS limitation and we cannot work around it. However, there is a solution for Windows users - tools like [ImDisk](https://sourceforge.net/projects/imdisk-toolkit/) will allow you to create a RAMdisk and assign it a drive letter, to which one can point a webpack configuration's `output` property.
+Windows users that have installed [Windows Subsystem for Linux v2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) can use the module without issue.
+
+However, Windows users without WSL2 are in a pickle. Unfortunately Windows does not ship with any capabilities that allow for creation of RAM disks / drives programmatically, without user interaction. This is an OS limitation and we cannot work around it. However, there is a solution for Windows users - tools like [ImDisk](https://sourceforge.net/projects/imdisk-toolkit/) will allow you to create a RAMdisk and assign it a drive letter, to which one can point a webpack configuration's `output` property.
 
 ## Removing the RAMdisk
 
