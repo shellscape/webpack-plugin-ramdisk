@@ -62,7 +62,9 @@ const options = { ... };
 
 module.exports = {
 	// an example entry definition
-	output: '/myapp/dist',
+	output: {
+		path: '/myapp/dist'  // ← important: this must be an absolute path!
+  }
   ...
   plugins: [
     new WebpackPluginRamdisk(options)

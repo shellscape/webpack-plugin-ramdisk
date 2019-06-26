@@ -20,6 +20,7 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --fix --cache lib test",
     "lint-staged": "lint-staged",
+    "pretest": "del test/fixtures/multi/output test/fixtures/simple/output",
     "security": "npm audit",
     "test": "ava"
   },
@@ -40,6 +41,7 @@
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "ava": "^2.1.0",
+    "del-cli": "^2.0.0",
     "eslint": "^6.0.1",
     "eslint-config-shellscape": "^2.0.2",
     "lint-staged": "^8.1.0",
@@ -63,7 +65,9 @@
     "webpack"
   ],
   "ava": {
-    "files": ["!**/fixtures/**"]
+    "files": [
+      "!**/fixtures/**"
+    ]
   },
   "pre-commit": "lint-staged",
   "lint-staged": {
