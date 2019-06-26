@@ -65,8 +65,8 @@ test('simple config', (t) => {
   const [, outputPath] = stdout.match(/written to (.+)\n?/);
   const [diskPath] = outputPath.match(/((.+)simpleconfig)/);
 
-  t.snapshot(outputPath);
-  t.snapshot(diskPath);
+  t.snapshot(outputPath.replace(/mnt|Volumes/, '[mount]'));
+  t.snapshot(diskPath.replace(/mnt|Volumes/, '[mount]'));
   t.true(exists(join(outputPath, 'output.js')));
 
   detatch(diskPath);
