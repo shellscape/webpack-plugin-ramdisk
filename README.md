@@ -30,9 +30,9 @@
 
 _Please consider donating if you find this project useful._
 
-## What It Does
+### What It Does
 
-This plugin will initialize and mount a [RAM disk / drive](https://en.wikipedia.org/wiki/RAM_drive) to enable faster build times. This has advantages over third-party in-memory filesystems in that it uses Node's `fs` module in conjunction with the local system's native capabilities. It's especially useful for projects which need to perform many successive builds.
+This plugin will initialize and mount a [RAM disk / drive](https://en.wikipedia.org/wiki/RAM_drive) to enable faster build emitting times. This has advantages over third-party in-memory filesystems in that it uses Node's `fs` module in conjunction with the local system's native capabilities. It's especially useful for projects which need to perform many successive builds, such as during development with Hot Module Reloading enabled. In an HMR scenario, this will also _prevent excessive writes_ to Solid State Drives, preventing the shortening of the drive's lifespan.
 
 ## Requirements
 
