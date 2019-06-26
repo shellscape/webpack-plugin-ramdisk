@@ -1,10 +1,9 @@
 version: 2
 jobs:
   node-v10-latest:
-    docker:
-      - image: rollupcabal/circleci-node-v10:latest
+    machine:
+      image: circleci/node:12.4.0
     steps:
-      - setup_remote_docker
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
