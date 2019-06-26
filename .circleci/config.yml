@@ -1,21 +1,22 @@
 version: 2
 jobs:
   node-v10-latest:
-    machine:
-      image: circleci/node:12.4.0
+    machine: true
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          name: Node Info
-          command: node --version && npm --version
-      - run:
-          name: NPM Rebuild
-          command: npm install
-      - run:
-          name: Run unit tests.
-          command: npm run ci:coverage
+          name: Setup Node 12 and Run Tests
+          command: |
+            set +e
+            touch $BASH_ENV
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+            export NVM_DIR="/opt/circleci/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm install 12
+            nvm alias default 12
+            node --version && npm --version
+            npm install
+            npm run ci:coverage
       - run:
           name: Submit coverage data to codecov.
           command: bash <(curl -s https://codecov.io/bash)
