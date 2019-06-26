@@ -2,7 +2,7 @@ version: 2
 jobs:
   node-v10-latest:
     docker:
-      image: rollupcabal/circleci-node-v10:latest
+      - image: rollupcabal/circleci-node-v10:latest
     steps:
       - setup_remote_docker
       - checkout
