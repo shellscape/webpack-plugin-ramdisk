@@ -130,6 +130,28 @@ Windows users that have installed [Windows Subsystem for Linux v2](https://devbl
 
 However, Windows users without WSL2 are in a pickle. Unfortunately Windows does not ship with any capabilities that allow for creation of RAM disks / drives programmatically, without user interaction. This is an OS limitation and we cannot work around it. However, there is a solution for Windows users - tools like [ImDisk](https://sourceforge.net/projects/imdisk-toolkit/) will allow you to create a RAMdisk and assign it a drive letter, to which one can point a webpack configuration's `output` property.
 
+## Performance
+
+Average savings for a bundle's total build time ranges from 25-32% according to tests we've run on a variety of platforms and bundle sizes. The largest gains were during frequently Hot Module Reloading operations, where one or more files were changed and the bundle(s) were rebuilt during watch mode.
+
+For example, the following stats were generated for a 13mb bundle:
+
+Without `webpack-plugin-ramdisk`:
+ - initial build and emit: 19.88s
+ - initial file change, save, and rebuild: 0.6s
+ - subsequent changes and rebuilds: 1.15s 0.864s 1.68s
+
+Average build and emit time: 1.23s
+
+With `webpack-plugin-ramdisk`:
+ - initial build and emit: 16.8s
+ - initial file change, save, and rebuild: 0.9s
+ - subsequent changes and rebuilds: 1.23s, 0.951s, 0.48s
+
+Average build and emit time: 0.887s
+
+Result = 28% time savings. This may seem inconsequential, but consider the number of times a single developer will save and rebuild for HMR during the course of a workday. When aggregated, that's a considerable savings throughout a session.
+
 ## Removing the RAMdisk
 
 _These commands use `wpr` as the RAMdisk name. If the `name` option has been modified, swap `wpr` for the value specified in the options._
