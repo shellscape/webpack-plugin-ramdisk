@@ -1,6 +1,6 @@
 {
   "name": "webpack-plugin-ramdisk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "🐏 A webpack plugin for blazing fast builds on a RAM disk / drive",
   "license": "MPL-2.0",
   "repository": "shellscape/webpack-plugin-ramdisk",
@@ -33,9 +33,9 @@
     "webpack": "^4.20.0"
   },
   "dependencies": {
+    "@hapi/joi": "^15.1.0",
     "chalk": "^2.4.1",
-    "execa": "^2.0.0",
-    "joi": "^14.3.0"
+    "execa": "^2.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
