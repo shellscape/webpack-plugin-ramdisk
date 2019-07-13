@@ -87,7 +87,7 @@ You'll then see that build output has been written to the RAMdisk. In our exampl
 Type: `Number`<br>
 Default: `512`
 
-Sets the [block size](https://en.wikipedia.org/wiki/Block_(data_storage) used when allocating space for the RAMdisk.
+Sets the [block size](https://en.wikipedia.org/wiki/Block_(data_storage)) used when allocating space for the RAMdisk.
 
 ### `bytes`
 Type: `Number`<br>
