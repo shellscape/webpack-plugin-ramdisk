@@ -33,9 +33,9 @@
     "webpack": "^4.20.0"
   },
   "dependencies": {
-    "@hapi/joi": "^15.1.0",
-    "chalk": "^3.0.0",
-    "execa": "^3.4.0"
+    "@hapi/joi": "^17.1.1",
+    "chalk": "^4.1.0",
+    "execa": "^4.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
