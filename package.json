@@ -1,6 +1,6 @@
 {
   "name": "webpack-plugin-ramdisk",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "🐏 A webpack plugin for blazing fast builds on a RAM disk / drive",
   "license": "MPL-2.0",
   "repository": "shellscape/webpack-plugin-ramdisk",
