@@ -21,7 +21,7 @@
     "lint": "eslint --fix --cache lib test",
     "lint-staged": "lint-staged",
     "pretest": "del test/fixtures/multi/output test/fixtures/simple/output",
-    "security": "npm audit",
+    "security": "npm audit --audit-level=moderate",
     "test": "ava"
   },
   "files": [
@@ -38,16 +38,16 @@
     "execa": "^3.4.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "ava": "^2.1.0",
-    "del-cli": "^3.0.0",
+    "del-cli": "^3.0.1",
     "eslint-config-shellscape": "^2.0.2",
     "lint-staged": "^9.2.0",
     "nyc": "^14.1.1",
     "pre-commit": "^1.2.2",
     "prettier": "^1.14.3",
-    "webpack": "^4.35.3",
+    "webpack": "^4.44.2",
     "webpack-nano": "^0.8.1"
   },
   "keywords": [
