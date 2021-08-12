@@ -21,7 +21,7 @@
     "lint": "eslint --fix --cache lib test",
     "lint-staged": "lint-staged",
     "pretest": "del test/fixtures/multi/output test/fixtures/simple/output",
-    "security": "npm audit --audit-level=moderate",
+    "security": "npm audit --audit-level=high --production",
     "test": "ava"
   },
   "files": [
